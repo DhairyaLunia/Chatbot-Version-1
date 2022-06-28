@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="rough.css">
+    <title>Chatbot</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="title">Chatbot</div>
+        <div class="item">
+            <div class="icon">
+                <i class="fa fa-user"></i>
+            </div>
+            <div class="msg">
+                <p>Hello everyone, How are you?</p>
+            </div>
+        </div>
+        <br clear="both">
+        <div class="item right">
+            <div class="msg">
+                <p>Nice</p>
+            </div>
+        </div>
+        <div class="item">
+            <div class="icon">
+                <i class="fa fa-user"></i>
+            </div>
+            <div class="msg">
+                <p>How could we assist you?</p>
+            </div>
+        </div>
+        <div class="typing-area">
+            <div class="input-field">
+                <input id="user" type="text" placeholder="Type your message" required>
+                <button onclick="ret()"><i class="fa fa-send" style="font-size:18px;color:rgb(0, 119, 255)"></i></button>
+            </div>
+        </div>
+        <br clear="both">
+        <div class="item right">
+            <div class="msg">
+                <p id="demo"></p>
+            </div>
+        </div>
+        <div class="item">
+            <div class="icon">
+                <i class="fa fa-user"></i>
+            </div>
+            <div class="msg">
+                <p id="demo1"></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function ret()
+{
+    let inp=document.getElementById("user").value;
+    document.getElementById("demo").innerHTML=inp;
+    if(inp.includes("contact") || inp.includes("number") || inp.includes("no") || inp.includes("call"))
+     document.getElementById("demo1").innerHTML="Customer Care: 9003098780";
+    else if(inp.includes("goodbye") || inp.includes("by") || inp.includes("thank you") || inp.includes("thanks")) 
+     document.getElementById("demo1").innerHTML="Thank you for your queries, you can ask further queries";
+    else if(inp.includes("service") || inp.includes("work") || inp.includes("activity"))
+     document.getElementById("demo1").innerHTML="We provide IT Services";
+    else if(inp.includes("location") || inp.includes("address") || inp.includes("place"))
+     document.getElementById("demo1").innerHTML="Address: Elait IT Technology, Chennai";
+    else
+     document.getElementById("demo1").innerHTML="Incorrect query"; 
+
+}
+    </script>
+</body>
+</html>
